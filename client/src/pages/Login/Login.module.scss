@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  min-height: 100%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+
+  .row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+
+    .input {
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  text-align: center;
+}
