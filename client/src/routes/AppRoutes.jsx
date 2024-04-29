@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
-import Home from '../pages/Home/index.jsx'
-import Login from '../pages/Login/index.jsx'
-import Register from '../pages/Register/Index.jsx'
+import Home from '../pages/Home/Home.jsx'
+import Login from '../pages/Login/Login.jsx'
+import Register from '../pages/Register/Register.jsx'
 
 const AppRoutes = () => {
 	return (

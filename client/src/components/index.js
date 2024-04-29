@@ -1,0 +1,5 @@
+export { default as Input } from './Form/Input/Input'
+export { default as UploadFile } from './Form/UploadFile/UploadFile'
+export { default as TextArea } from './Form/TextArea/TextArea'
+export { default as Nav } from './Nav/Nav.jsx'
+export { default as Footer } from './Footer/Footer.jsx'

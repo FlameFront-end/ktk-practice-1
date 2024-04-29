@@ -1,0 +1,40 @@
+
+.uploadImageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.uploadInputLabel {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.fileWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  img,
+  video {
+    width: auto;
+    height: auto;
+    max-height: 200px;
+    border-radius: 12px;
+  }
+}
+
+.uploadImagePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  color: white;
+  background-color:black;
+  border-radius: 12px;
+}
+
+.uploadInput {
+  display: none;
+}
