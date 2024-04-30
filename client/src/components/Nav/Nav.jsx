@@ -7,6 +7,7 @@ const Nav = () => {
 			<Link to='/'>Главная</Link>
 			<Link to='/login'>Вход</Link>
 			<Link to='/register'>Регистрация</Link>
+			<Link to='/cart'>Корзина</Link>
 		</nav>
 	)
 }

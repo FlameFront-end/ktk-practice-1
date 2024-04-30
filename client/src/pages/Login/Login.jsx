@@ -1,4 +1,4 @@
-import image from '../../assets/registration-form-1.jpg'
+import image from '../../assets/registration-form-1.webp'
 import s from './Login.module.scss'
 import { Input } from '../../components'
 import LayoutCenter from '../../layouts/LayoutCenter/LayoutCenter.jsx'

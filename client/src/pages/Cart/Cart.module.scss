@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    list-style: none;
+    margin-top: 20px;
+
+    //width: 500px;
+
+    .item {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid white;
+
+      .text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      img {
+        max-width: 200px
+      }
+    }
+  }
+
+  .btn {
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+}

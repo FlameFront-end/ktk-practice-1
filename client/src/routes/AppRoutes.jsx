@@ -1,7 +1,5 @@
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
-import Home from '../pages/Home/Home.jsx'
-import Login from '../pages/Login/Login.jsx'
-import Register from '../pages/Register/Register.jsx'
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import { Home, Cart, Register, Login } from '../pages'
 
 const AppRoutes = () => {
 	return (
@@ -10,6 +8,7 @@ const AppRoutes = () => {
 				<Route element={<Home />} path='/' />
 				<Route element={<Login />} path='/login' />
 				<Route element={<Register />} path='/register' />
+				<Route element={<Cart />} path='/cart' />
 			</Routes>
 		</HashRouter>
 	)

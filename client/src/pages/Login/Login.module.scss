@@ -3,6 +3,16 @@
   gap: 100px;
   align-items: center;
   min-height: 100%;
+
+  @media screen and (max-width: 800px){
+    flex-direction: column;
+    gap: 20px;
+
+    .right, .left {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
 .right {
@@ -24,4 +34,13 @@
 
 .title {
   text-align: center;
+}
+
+
+.left {
+  max-width: 50%;
+  img {
+    border-radius: 12px;
+    width: 100%;
+  }
 }
