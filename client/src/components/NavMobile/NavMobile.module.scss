@@ -1,0 +1,39 @@
+.burger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #242424;
+  overflow: hidden;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  .close {
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: max-content;
+
+    li {
+      width: max-content;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
