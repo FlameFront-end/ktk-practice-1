@@ -24,10 +24,10 @@ const ProductItem = ({ product }) => {
 			<img src={product.image} alt={product.name} />
 			<div className={s.text}>
 				<h3>{product.name}</h3>
-				<p>Breed: {product.breed}</p>
-				<p>Gender: {product.gender}</p>
-				<p>Color: {product.color}</p>
-				<p>Additional Attributes: {product.attributes.join(', ')}</p>
+				<p>Порода: {product.breed}</p>
+				<p>Пол: {product.gender}</p>
+				<p>Цвет: {product.color}</p>
+				<p>Дополнительная атрибутика: {product.attributes.join(', ')}</p>
 				{isProductInArray ? (
 					<button className={s.delete} onClick={handleDelete}>
 						Удалить из корзины
