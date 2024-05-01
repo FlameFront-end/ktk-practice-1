@@ -1,5 +1,8 @@
 import product1 from './assets/product-1.jpg'
 import product2 from './assets/product-2.jpg'
+import product3 from './assets/product-3.jpg'
+import product4 from './assets/product-4.jpg'
+import product5 from './assets/product-5.jpg'
 
 export const products = [
 	{
@@ -27,7 +30,7 @@ export const products = [
 		gender: 'Мужской',
 		color: 'Белый',
 		attributes: ['Клетка'],
-		image: product1
+		image: product3
 	},
 	{
 		id: 4,
@@ -36,7 +39,7 @@ export const products = [
 		gender: 'Женский',
 		color: 'Розовый',
 		attributes: ['Клетка'],
-		image: product2
+		image: product4
 	},
 	{
 		id: 5,
@@ -45,16 +48,7 @@ export const products = [
 		gender: 'Мужской',
 		color: 'Желтый',
 		attributes: ['Клетка'],
-		image: product1
-	},
-	{
-		id: 6,
-		name: 'Сара',
-		breed: 'Неразговорчивая амазонка',
-		gender: 'Женский',
-		color: 'Красный',
-		attributes: ['Клетка'],
-		image: product2
+		image: product5
 	}
 ]
 
