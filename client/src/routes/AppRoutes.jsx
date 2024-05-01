@@ -1,6 +1,5 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import { Home, Cart, Register, Login } from '../pages'
-import Admin from '../pages/Admin/Admin.jsx'
+import { Home, Cart, Register, Login, Admin, MyRes } from '../pages'
 
 const AppRoutes = () => {
 	return (
@@ -11,6 +10,7 @@ const AppRoutes = () => {
 				<Route element={<Register />} path='/register' />
 				<Route element={<Cart />} path='/cart' />
 				<Route element={<Admin />} path='/admin' />
+				<Route element={<MyRes />} path='/my_res' />
 			</Routes>
 		</HashRouter>
 	)

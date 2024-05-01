@@ -19,6 +19,12 @@ const NavMobile = ({ onClose }) => {
 					</Link>
 				</li>
 				<li className={s.item}>
+					<Link to='/my_res' onClick={onClose}>
+						Мои заявки
+						<img src={arrow} alt='arrow' />
+					</Link>
+				</li>
+				<li className={s.item}>
 					<Link to='/login' onClick={onClose}>
 						Вход
 						<img src={arrow} alt='arrow' />
