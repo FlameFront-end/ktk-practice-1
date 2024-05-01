@@ -1,7 +1,11 @@
 import s from './ProductItem.module.scss'
-import React from 'react'
+import { state } from '../../../state/index.js'
 
 const ProductItem = ({ product }) => {
+	const addToCart = () => {
+		state.shopProductArray = [...state.shopProductArray, product]
+	}
+
 	return (
 		<div className={s.item}>
 			<img src={product.image} alt={product.name} />
@@ -11,7 +15,7 @@ const ProductItem = ({ product }) => {
 				<p>Gender: {product.gender}</p>
 				<p>Color: {product.color}</p>
 				<p>Additional Attributes: {product.attributes.join(', ')}</p>
-				<button>Add to Cart</button>
+				<button onClick={addToCart}>Добавить в корзину</button>
 			</div>
 		</div>
 	)

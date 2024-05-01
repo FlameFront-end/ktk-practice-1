@@ -125,7 +125,7 @@ const Register = () => {
 						onChange={(e) => onHandleChange(e.target.value, 'password')}
 						value={data.password}
 					/>
-					<button type='submit'>Register</button>
+					<button type='submit'>Зерегестрироваться</button>
 				</form>
 			</div>
 		</LayoutCenter>
