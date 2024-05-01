@@ -43,7 +43,12 @@ const Cart = () => {
 											Дополнительная атрибутика: {item.attributes.join(', ')}
 										</p>
 									</div>
-									<button onClick={() => handleDelete(item.id)}>Удалить</button>
+									<button
+										className={s.delete}
+										onClick={() => handleDelete(item.id)}
+									>
+										Удалить
+									</button>
 								</li>
 							))}
 						</ul>

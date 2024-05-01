@@ -66,7 +66,8 @@ export const allRes = [
 		gender: 'Мужской',
 		color: 'Серый',
 		attributes: ['Клетка', 'Корм'],
-		image: product1
+		image: product1,
+		status: 'Отказ'
 	},
 	{
 		id: 2,
@@ -75,6 +76,7 @@ export const allRes = [
 		gender: 'Женский',
 		color: 'Зеленый',
 		attributes: ['Клетка'],
-		image: product2
+		image: product2,
+		status: 'Принято'
 	}
 ]
