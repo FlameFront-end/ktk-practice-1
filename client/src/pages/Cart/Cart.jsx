@@ -18,6 +18,12 @@ const Cart = () => {
 		}
 	}
 
+	const handleDelete = (id) => {
+		state.shopProductArray = snap.shopProductArray.filter(
+			(item) => item.id !== id
+		)
+	}
+
 	return (
 		<LayoutCenter>
 			<div className={s.wrapper}>
@@ -37,6 +43,7 @@ const Cart = () => {
 											Дополнительная атрибутика: {item.attributes.join(', ')}
 										</p>
 									</div>
+									<button onClick={() => handleDelete(item.id)}>Удалить</button>
 								</li>
 							))}
 						</ul>
