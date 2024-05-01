@@ -13,6 +13,12 @@ const ProductItem = ({ product }) => {
 		(p) => p.id === product.id
 	)
 
+	const handleDelete = () => {
+		state.shopProductArray = snap.shopProductArray.filter(
+			(item) => item.id !== product.id
+		)
+	}
+
 	return (
 		<div className={s.item}>
 			<img src={product.image} alt={product.name} />
@@ -23,7 +29,9 @@ const ProductItem = ({ product }) => {
 				<p>Color: {product.color}</p>
 				<p>Additional Attributes: {product.attributes.join(', ')}</p>
 				{isProductInArray ? (
-					<button disabled>Уже в корзине</button>
+					<button className={s.delete} onClick={handleDelete}>
+						Удалить из корзины
+					</button>
 				) : (
 					<button onClick={addToCart}>Добавить в корзину</button>
 				)}

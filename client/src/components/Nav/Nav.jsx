@@ -9,6 +9,7 @@ const Nav = ({ handleMenu }) => {
 		<>
 			<nav className={s.nav}>
 				<Link to='/'>Главная</Link>
+				<Link to='/admin'>Админ панель</Link>
 				<Link to='/login'>Вход</Link>
 				<Link to='/register'>Регистрация</Link>
 				<div className={s.cart}>

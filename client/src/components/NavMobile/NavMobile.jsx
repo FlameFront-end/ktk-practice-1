@@ -13,6 +13,12 @@ const NavMobile = ({ onClose }) => {
 					</Link>
 				</li>
 				<li className={s.item}>
+					<Link to='/admin' onClick={onClose}>
+						Админ панель
+						<img src={arrow} alt='arrow' />
+					</Link>
+				</li>
+				<li className={s.item}>
 					<Link to='/login' onClick={onClose}>
 						Вход
 						<img src={arrow} alt='arrow' />
