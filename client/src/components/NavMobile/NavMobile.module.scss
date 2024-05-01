@@ -2,37 +2,36 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  background-color: #242424;
-  overflow: hidden;
-  padding: 20px;
-
   display: flex;
   justify-content: center;
+  width: 100vw;
+  padding: 20px;
+  overflow: hidden;
+  background-color: #242424;
 
   .close {
-    padding: 10px;
     position: absolute;
     top: 20px;
     right: 20px;
+    padding: 10px;
   }
 
   .list {
-    list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
     width: max-content;
+    list-style: none;
 
     li {
       width: max-content;
 
       a {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
       }
     }
   }

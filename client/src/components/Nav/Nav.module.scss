@@ -1,19 +1,19 @@
 .nav {
   display: flex;
   gap: 50px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 20px;
 }
 
 .nav_mobile {
-  min-height: 70px;
   display: flex;
   gap: 50px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  min-height: 70px;
   padding: 20px;
 
   button {
@@ -27,25 +27,25 @@
 
     .line {
       width: 30px;
-      background-color: white;
       height: 2px;
+      background-color: white;
     }
   }
 }
 
 .cart {
   display: flex;
-  align-items: center;
   gap: 10px;
+  align-items: center;
 
   .cart_count {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: white;
-    color: #242424;
+    justify-content: center;
     width: 30px;
     height: 30px;
+    color: #242424;
+    background-color: white;
     border-radius: 50%;
   }
 }
@@ -54,6 +54,7 @@
   .nav {
     display: none;
   }
+
   .nav_mobile {
     display: flex;
   }
@@ -63,6 +64,7 @@
   .nav {
     display: flex;
   }
+
   .nav_mobile {
     display: none;
   }

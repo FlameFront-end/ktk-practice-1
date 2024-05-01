@@ -4,18 +4,19 @@
   align-items: center;
   min-height: 100%;
 
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 800px) {
     flex-direction: column;
     gap: 20px;
 
-    .right, .left {
+    .right,
+    .left {
       width: 100%;
       max-width: 100%;
     }
   }
 
-  @media screen and (max-width: 956px){
-      gap: 40px;
+  @media screen and (max-width: 956px) {
+    gap: 40px;
   }
 }
 
@@ -30,7 +31,7 @@
     gap: 20px;
     width: 100%;
 
-    @media screen and (max-width: 1100px){
+    @media screen and (max-width: 1100px) {
       flex-direction: column;
       gap: 20px;
     }
@@ -38,7 +39,6 @@
     .input {
       width: 100%;
     }
-
   }
 }
 
@@ -46,11 +46,11 @@
   text-align: center;
 }
 
-
 .left {
   max-width: 50%;
+
   img {
-    border-radius: 12px;
     width: 100%;
+    border-radius: 12px;
   }
 }
