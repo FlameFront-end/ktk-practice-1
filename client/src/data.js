@@ -49,7 +49,8 @@ export const products = [
 		color: 'Желтый',
 		attributes: ['Клетка'],
 		image: product5
-	}
+	},
+
 ]
 
 export const allRes = [
