@@ -1,8 +1,7 @@
 import { setCookie } from 'nookies'
 
-export const handleSuccessLogin = (data) => {
-	setCookie(null, '_token', data.token, {
+export const handleSuccessLogin = (token) => {
+	setCookie(null, '_token', token, {
 		path: '/'
 	})
-	location.href = '/'
 }

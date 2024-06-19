@@ -8,8 +8,11 @@ import {
 	showErrorSnackbar,
 	showSuccessSnackbar
 } from '../../utils'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+	const navigate = useNavigate()
 	const [data, setData] = useState({
 		login: '',
 		password: ''
@@ -37,15 +40,20 @@ const Login = () => {
 				})
 			}
 
-			// await Api.auth
-			// 	.login(data)
-			// 	.then((res) => {
-			// 		showSuccessSnackbar('Успешный вход в аккаунт')
-			// 		handleSuccessLogin(res)
-			// 	})
-			// 	.catch(() => {
-			// 		showErrorSnackbar({ message: 'Что-то пошло не так' })
-			// 	})
+			axios
+				.post('/auth/login', {
+					username: preparedData.login,
+					password: preparedData.password
+				})
+				.then((responseLogin) => {
+					window.localStorage.setItem('userId', responseLogin.data.user.id)
+					showSuccessSnackbar('Успешный вход в аккаунт')
+					handleSuccessLogin(responseLogin.data.token)
+					navigate('/')
+				})
+				.catch((error) => {
+					console.error('Failed to login:', error)
+				})
 		} catch (err) {
 			showErrorSnackbar({ message: 'Что-то пошло не так' })
 			console.error(err)

@@ -8,6 +8,8 @@ import { showErrorSnackbar, showSuccessSnackbar } from '../../utils/index.js'
 const Cart = () => {
 	const snap = useSnapshot(state)
 
+	console.log('user', snap.user)
+
 	const handleSubmit = async () => {
 		try {
 			showSuccessSnackbar('Заявка отправлена успешно')

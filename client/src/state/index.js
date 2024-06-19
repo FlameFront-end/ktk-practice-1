@@ -1,7 +1,8 @@
 import { proxy } from 'valtio'
 
 const state = proxy({
-	shopProductArray: []
+	shopProductArray: [],
+	user: null
 })
 
 export { state }

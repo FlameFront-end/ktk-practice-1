@@ -1,12 +1,22 @@
 import s from './ProductItem.module.scss'
 import { state } from '../../../state/index.js'
 import { useSnapshot } from 'valtio'
+import Cookies from 'js-cookie'
+import { showErrorSnackbar } from '../../../utils/index.js'
 
 const ProductItem = ({ product }) => {
 	const snap = useSnapshot(state)
 
+	const hasToken = Cookies.get('_token') !== undefined
+
 	const addToCart = () => {
-		state.shopProductArray = [...state.shopProductArray, product]
+		if (hasToken) {
+			state.shopProductArray = [...state.shopProductArray, product]
+		} else {
+			return showErrorSnackbar({
+				message: 'Сначала войдите в аккаунт'
+			})
+		}
 	}
 
 	const isProductInArray = snap.shopProductArray.some(

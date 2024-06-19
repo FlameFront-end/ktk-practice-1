@@ -3,13 +3,12 @@ import s from './Register.module.scss'
 import { Input } from '../../components'
 import LayoutCenter from '../../layouts/LayoutCenter/LayoutCenter.jsx'
 import { useState } from 'react'
-import {
-	handleSuccessLogin,
-	showErrorSnackbar,
-	showSuccessSnackbar
-} from '../../utils'
+import { showErrorSnackbar, showSuccessSnackbar } from '../../utils'
+import axios from '../../utils/axios.js'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+	const navigate = useNavigate()
 	const [data, setData] = useState({
 		fullName: '',
 		login: '',
@@ -24,8 +23,10 @@ const Register = () => {
 
 			const preparedData = {
 				...data,
+				username: data.fullName?.trim(),
 				email: data.email?.trim(),
-				password: data.password?.trim()
+				password: data.password?.trim(),
+				phone: data.tel?.trim()
 			}
 
 			const { email, password, fullName, tel, login } = preparedData
@@ -66,15 +67,17 @@ const Register = () => {
 				})
 			}
 
-			// await Api.auth
-			// 	.login(data)
-			// 	.then((res) => {
-			// 		showSuccessSnackbar('Успешный вход в аккаунт')
-			// 		handleSuccessLogin(res)
-			// 	})
-			// 	.catch(() => {
-			// 		showErrorSnackbar({ message: 'Что-то пошло не так' })
-			// 	})
+			axios.post('/auth/register', preparedData).then(() => {
+				showSuccessSnackbar('Успешная регистрация аккаунта')
+				setData({
+					fullName: '',
+					tel: '',
+					login: '',
+					password: '',
+					email: ''
+				})
+			})
+			navigate('/login')
 		} catch (err) {
 			showErrorSnackbar({ message: 'Что-то пошло не так' })
 			console.error(err)
