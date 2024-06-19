@@ -1,22 +1,46 @@
 import LayoutCenter from '../../layouts/LayoutCenter/LayoutCenter.jsx'
 import s from './Cart.module.scss'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSnapshot } from 'valtio'
 import { state } from '../../state/index.js'
-import { showErrorSnackbar, showSuccessSnackbar } from '../../utils/index.js'
+import {
+	getCookie,
+	showErrorSnackbar,
+	showSuccessSnackbar
+} from '../../utils/index.js'
 import axios from 'axios'
 
 const Cart = () => {
 	const snap = useSnapshot(state)
+	const [userId, setUserId] = useState(0)
+
+	useEffect(() => {
+		axios
+			.get('/auth/me', {
+				headers: {
+					authorization: getCookie('_token')
+				}
+			})
+			.then((r) => {
+				setUserId(r.data.user?.id)
+				console.log('r', JSON.parse(r.data.user.requests[0]))
+			})
+			.catch((error) => {
+				console.error('Failed to login:', error)
+			})
+	}, [])
 
 	const handleSubmit = async () => {
 		try {
-			const productsIds = snap.shopProductArray.map((product) => product.id)
+			const requests = snap.shopProductArray.map((product) => ({
+				id: product.id,
+				status: 'На рассмотрении'
+			}))
 
 			axios
 				.post('/requests/create-request', {
-					userId: snap.user.id,
-					productsIds
+					userId,
+					requests
 				})
 				.then(() => {
 					showSuccessSnackbar('Заявка отправлена успешно')
