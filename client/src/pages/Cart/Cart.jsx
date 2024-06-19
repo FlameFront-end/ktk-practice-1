@@ -4,16 +4,27 @@ import React from 'react'
 import { useSnapshot } from 'valtio'
 import { state } from '../../state/index.js'
 import { showErrorSnackbar, showSuccessSnackbar } from '../../utils/index.js'
+import axios from 'axios'
 
 const Cart = () => {
 	const snap = useSnapshot(state)
 
-	console.log('user', snap.user)
-
 	const handleSubmit = async () => {
 		try {
-			showSuccessSnackbar('Заявка отправлена успешно')
-			state.shopProductArray = []
+			const productsIds = snap.shopProductArray.map((product) => product.id)
+
+			axios
+				.post('/requests/create-request', {
+					userId: snap.user.id,
+					productsIds
+				})
+				.then(() => {
+					showSuccessSnackbar('Заявка отправлена успешно')
+					state.shopProductArray = []
+				})
+				.catch((error) => {
+					console.error('Failed to login:', error)
+				})
 		} catch (err) {
 			showErrorSnackbar({ message: 'Что-то пошло не так' })
 			console.error(err)

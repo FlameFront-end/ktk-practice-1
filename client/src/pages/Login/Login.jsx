@@ -10,6 +10,7 @@ import {
 } from '../../utils'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { state } from '../../state/index.js'
 
 const Login = () => {
 	const navigate = useNavigate()
@@ -50,6 +51,7 @@ const Login = () => {
 					showSuccessSnackbar('Успешный вход в аккаунт')
 					handleSuccessLogin(responseLogin.data.token)
 					navigate('/')
+					state.user = responseLogin.data.user
 				})
 				.catch((error) => {
 					console.error('Failed to login:', error)
