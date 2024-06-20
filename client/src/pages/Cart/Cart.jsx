@@ -1,6 +1,6 @@
+import axios from 'axios'
 import LayoutCenter from '../../layouts/LayoutCenter/LayoutCenter.jsx'
-import s from './Cart.module.scss'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSnapshot } from 'valtio'
 import { state } from '../../state/index.js'
 import {
@@ -8,7 +8,7 @@ import {
 	showErrorSnackbar,
 	showSuccessSnackbar
 } from '../../utils/index.js'
-import axios from 'axios'
+import s from './Cart.module.scss'
 
 const Cart = () => {
 	const snap = useSnapshot(state)
@@ -23,7 +23,6 @@ const Cart = () => {
 			})
 			.then((r) => {
 				setUserId(r.data.user?.id)
-				console.log('r', JSON.parse(r.data.user.requests[0]))
 			})
 			.catch((error) => {
 				console.error('Failed to login:', error)
@@ -33,7 +32,7 @@ const Cart = () => {
 	const handleSubmit = async () => {
 		try {
 			const requests = snap.shopProductArray.map((product) => ({
-				id: product.id,
+				productId: product.id,
 				status: 'На рассмотрении'
 			}))
 

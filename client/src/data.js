@@ -49,29 +49,5 @@ export const products = [
 		color: 'Желтый',
 		attributes: ['Клетка'],
 		image: product5
-	},
-
-]
-
-export const allRes = [
-	{
-		id: 1,
-		name: 'Чарли',
-		breed: 'Африканский серый',
-		gender: 'Мужской',
-		color: 'Серый',
-		attributes: ['Клетка', 'Корм'],
-		image: product1,
-		status: 'Отказ'
-	},
-	{
-		id: 2,
-		name: 'Полли',
-		breed: 'Амазонка',
-		gender: 'Женский',
-		color: 'Зеленый',
-		attributes: ['Клетка'],
-		image: product2,
-		status: 'Принято'
 	}
 ]

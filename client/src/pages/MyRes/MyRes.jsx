@@ -30,9 +30,8 @@ const MyRes = () => {
 			})
 			.then((r) => {
 				const requests = []
-				const resRequests = r.data.user.requests.map((item) => JSON.parse(item))
-				resRequests.map((item) => {
-					addProductById(item.id, requests, item.status)
+				r.data.user.requests.map((item) => {
+					addProductById(item.productId, requests, item.status)
 				})
 
 				setRequests(requests)
