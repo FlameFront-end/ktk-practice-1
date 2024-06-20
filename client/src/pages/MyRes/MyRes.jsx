@@ -4,6 +4,7 @@ import { products } from '../../data.js'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { getCookie } from '../../utils/index.js'
+import LayoutCenter from '../../layouts/LayoutCenter/LayoutCenter.jsx'
 
 const MyRes = () => {
 	const [requests, setRequests] = useState([])
@@ -49,26 +50,30 @@ const MyRes = () => {
 	}
 
 	return (
-		<MainLayout>
+		<LayoutCenter>
 			<div className={s.wrapper}>
 				<h2>Мои заявки</h2>
-				<ul className={s.list}>
-					{requests.map((item, index) => (
-						<li key={index} className={s.item}>
-							<img src={item.image} alt={item.name} />
-							<div className={s.text}>
-								<h3>{item.name}</h3>
-								<p>Порода: {item.breed}</p>
-								<p>Пол: {item.gender}</p>
-								<p>Расцветка: {item.color}</p>
-								<p>Дополнительная атрибутика: {item.attributes.join(', ')}</p>
-								<p className={getClassName(item.status)}>{item.status}</p>
-							</div>
-						</li>
-					))}
-				</ul>
+				{requests?.length ? (
+					<ul className={s.list}>
+						{requests.map((item, index) => (
+							<li key={index} className={s.item}>
+								<img src={item.image} alt={item.name} />
+								<div className={s.text}>
+									<h3>{item.name}</h3>
+									<p>Порода: {item.breed}</p>
+									<p>Пол: {item.gender}</p>
+									<p>Расцветка: {item.color}</p>
+									<p>Дополнительная атрибутика: {item.attributes.join(', ')}</p>
+									<p className={getClassName(item.status)}>{item.status}</p>
+								</div>
+							</li>
+						))}
+					</ul>
+				) : (
+					<div className={s.empty}>Заявок нет</div>
+				)}
 			</div>
-		</MainLayout>
+		</LayoutCenter>
 	)
 }
 
